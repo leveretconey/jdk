@@ -165,10 +165,7 @@ void XHeap::threads_do(ThreadClosure* tc) const {
 }
 
 void XHeap::out_of_memory() {
-  ResourceMark rm;
-
   XStatInc(XCounterOutOfMemory);
-  log_info(gc)("Out Of Memory (%s)", Thread::current()->name());
 }
 
 XPage* XHeap::alloc_page(uint8_t type, size_t size, XAllocationFlags flags) {
